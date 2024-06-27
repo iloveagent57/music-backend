@@ -16,6 +16,7 @@ services:
       - redis
     volumes:
       - .:/app:z
+      - ${HOME}/.config/internetarchive/ia.ini:/root/.config/internetarchive/ia.ini  # https://archive.org/services/docs/api/internetarchive/quickstart.html#configuring
     env_file:
       - ./.envs/.local/.django
       - ./.envs/.local/.postgres

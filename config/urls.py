@@ -18,7 +18,8 @@ urlpatterns = [
     # User management
     path("users/", include("music_backend.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
-    # Your stuff: custom urls includes go here
+    # Internet archive views
+    path("ia/", include("music_backend.ia.urls", namespace="ia")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 if settings.DEBUG:
     # Static file serving when using Gunicorn + Uvicorn for local web socket development
